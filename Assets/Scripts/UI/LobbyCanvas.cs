@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LobbyCanvas : MonoBehaviour
 {
@@ -17,6 +18,6 @@ public class LobbyCanvas : MonoBehaviour
     }
     private void MoveMainScene()
     {
-        GameManager.Instance.sceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("KHK_Scene");
     }
 }

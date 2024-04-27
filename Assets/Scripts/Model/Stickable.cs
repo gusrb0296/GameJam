@@ -8,9 +8,12 @@ public class Stickable : MonoBehaviour
 
     [SerializeField] GameObject floatTextPrefab;
 
-    Vector3 upperPivot = new Vector3(0, 1.0f , 0);
+    Vector3 upperPivot = new Vector3(0, 1.25f , 0);
 
     GameObject gameCanvas;
+
+    public int pivotIndex;
+
         
     private void Start()
     {
@@ -19,9 +22,8 @@ public class Stickable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Cheese")
+        if (other.CompareTag("Cheese"))
         {
-            print($"트리거 들어옴 : {other.gameObject.name}");
             gameObject.transform.parent = other.transform;
 
             gameCanvas.GetComponent<GameCanvas>().SetGold(gold);
@@ -29,6 +31,14 @@ public class Stickable : MonoBehaviour
             GameObject go = Instantiate(floatTextPrefab);
             go.transform.position = transform.position + upperPivot;
             go.GetComponent<FloatingText>().Initialize(gold);
+
+            Invoke("SpawnWithEvent", 10f);            
         }
+    }
+
+    private void SpawnWithEvent()
+    {
+        int rand = Random.Range(0, 16);
+        GameManager.Instance.GetIngredient.Invoke(rand, pivotIndex);
     }
 }

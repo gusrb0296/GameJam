@@ -12,6 +12,8 @@ public class GameCanvas : MonoBehaviour
 
     [SerializeField] GameObject panel_Pause;
 
+    [SerializeField] GameObject gameOverPivot;
+
     bool isPause;
 
     private int currentGold;
@@ -64,6 +66,17 @@ public class GameCanvas : MonoBehaviour
     public void SetGold(int gold)
     {
         currentGold += gold;
+        if(currentGold >= 30000)
+        {
+            GameManager.Instance.TriggerOff.Invoke();
+        }
         text_Gold.text = currentGold.ToString();
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+
+        gameOverPivot.SetActive(true);
     }
 }

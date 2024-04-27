@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingTime: 1
+  textColor: {r: 1, g: 1, b: 1, a: 0}
   _txtGold: {fileID: 1220132486563069133}
   Alpha: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &9067711283182609326
@@ -185,8 +186,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3001
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9741b7cbc50d73d45a74e811b6df20ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 5455e0af1a60659468374d10d811619b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

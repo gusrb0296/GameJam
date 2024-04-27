@@ -6,6 +6,7 @@ public class FloatingText : MonoBehaviour
     #region Fields
 
     [SerializeField] float floatingTime = 1.5f;
+    [SerializeField] Color textColor;
     private float _floatingSpeed = 0.5f;
     private float _alphaSpeed = 1.5f;
 
@@ -26,7 +27,8 @@ public class FloatingText : MonoBehaviour
     {
         SetGold(value);
         Alpha = _txtGold.color;
-        Alpha = Color.white;
+        //Alpha = Color.white;
+        Alpha = textColor;
         Alpha.a = 1;
 
         Destroy(gameObject, floatingTime);

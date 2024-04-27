@@ -6,7 +6,11 @@ using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     public FadeInOut fadePanel;
-    public SceneManager sceneManager;
+    public SceneController sceneManager;
+
+    public UnityEvent<int, int> GetIngredient;
+
+    public UnityEvent TriggerOff;
 
     private static GameManager instance;
     public static GameManager Instance
@@ -42,5 +46,13 @@ public class GameManager : MonoBehaviour
         {
             fadePanel.StartFadeOut();
         }
+    }
+
+    public void GameOver()
+    {
+        print("게임 메니저 게임 오버");
+        GameObject gamaPanel = GameObject.FindWithTag("GameCanvas");
+        gamaPanel.GetComponent<GameCanvas>().GameOver();
+
     }
 }

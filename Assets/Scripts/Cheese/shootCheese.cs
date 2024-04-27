@@ -18,21 +18,23 @@ public class shootCheese : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            isPressed = true;
+            Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            rb.velocity = direction.normalized * 10f;
+            //isPressed = true;
         }
-        else
-        {
-            isPressed = false;
-        }
+        //else
+        //{
+        //    isPressed = false;
+        //}
     }
 
     void FixedUpdate()
     {
-        if (isPressed)
-        {
-            Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            rb.velocity = direction.normalized * 10f;
-        }
+        //if (isPressed)
+        //{
+        //    Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    rb.velocity = direction.normalized * 10f;
+        //}
     }
 }
 
