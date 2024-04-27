@@ -25,6 +25,7 @@ public class gotoCheese : MonoBehaviour
         Vector3 cheesePosition = cheese.transform.position;
         Vector3 direction = cheesePosition - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        angle -= 90f;
         rb.rotation = angle;
         direction.Normalize();
         movement = direction;
