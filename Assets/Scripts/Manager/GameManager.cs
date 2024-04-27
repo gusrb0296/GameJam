@@ -5,8 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public FadeInOut fadePanel;
-
-    public int Gold { get; set; }    
+    [SerializeField]
+    SceneManager sceneManager;
+    public int Gold { get; set; }
 
     private static GameManager instance;
     public static GameManager Instance
@@ -35,12 +36,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.V)) 
+        if (Input.GetKeyDown(KeyCode.V))
         {
             fadePanel.StartFadeIn();
         }
 
-        if(Input.GetKeyDown(KeyCode.B)) 
+        if (Input.GetKeyDown(KeyCode.B))
         {
             fadePanel.StartFadeOut();
         }
