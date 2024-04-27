@@ -710,6 +710,10 @@ PrefabInstance:
       propertyPath: m_Distance
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4468640045206427997, guid: 4f4c4365bbc7bc04d81853d9465751dd, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4693421938037123318, guid: 4f4c4365bbc7bc04d81853d9465751dd, type: 3}
       propertyPath: m_Distance
       value: 0.559017
