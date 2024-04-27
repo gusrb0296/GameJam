@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public FadeInOut fadePanel;
     public SceneManager sceneManager;
-    public int Gold { get; set; }
 
     private static GameManager instance;
     public static GameManager Instance
@@ -29,8 +29,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        Gold = 0;
     }
 
     private void Update()
@@ -45,5 +43,4 @@ public class GameManager : MonoBehaviour
             fadePanel.StartFadeOut();
         }
     }
-
 }

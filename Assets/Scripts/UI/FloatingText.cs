@@ -6,10 +6,10 @@ public class FloatingText : MonoBehaviour
     #region Fields
 
     [SerializeField] float floatingTime = 1.5f;
-    private float _floatingSpeed = 0.25f;
-    private float _alphaSpeed = 5.0f;
+    private float _floatingSpeed = 0.5f;
+    private float _alphaSpeed = 1.5f;
 
-    private TextMeshProUGUI _txtGold;
+    [SerializeField] private TextMeshProUGUI _txtGold;
     public Color Alpha;
 
     #endregion
@@ -22,9 +22,9 @@ public class FloatingText : MonoBehaviour
 
     #region Init
 
-    public void Initialize()
+    public void Initialize(int value)
     {
-        _txtGold = GetComponentInChildren<TextMeshProUGUI>();
+        SetGold(value);
         Alpha = _txtGold.color;
         Alpha = Color.white;
         Alpha.a = 1;
@@ -47,7 +47,7 @@ public class FloatingText : MonoBehaviour
 
     #endregion
 
-    #region SetDamage
+    #region SetGold
 
     public void SetGold(long value)
     {
