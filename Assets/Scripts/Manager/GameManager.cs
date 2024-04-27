@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public FadeInOut fadePanel;
 
+    public int Gold { get; set; }    
+
     private static GameManager instance;
     public static GameManager Instance
     {
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        Gold = 0;
     }
 
     private void Update()
