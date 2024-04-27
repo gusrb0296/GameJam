@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 8238992161759650701}
+  sceneManager: {fileID: 0}
 --- !u!1 &6543372964044745414
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public FadeInOut fadePanel;
-    [SerializeField]
-    SceneManager sceneManager;
+    public SceneManager sceneManager;
     public int Gold { get; set; }
 
     private static GameManager instance;
