@@ -7,6 +7,8 @@ public class shootCheese : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 initialMousePos;
 
+    bool isPressed = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,13 +18,20 @@ public class shootCheese : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            rb.AddForce(direction.normalized * maxForce, ForceMode2D.Impulse);
+            isPressed = true;
         }
-
-        if (rb.velocity.magnitude > maxSpeed)
+        else
         {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+            isPressed = false;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (isPressed)
+        {
+            Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            rb.velocity = direction.normalized * 10f;
         }
     }
 }
