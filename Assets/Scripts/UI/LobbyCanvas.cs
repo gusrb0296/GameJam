@@ -6,18 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class LobbyCanvas : MonoBehaviour
 {
-    public Button btn_Start;
-    public Button btn_Recipe;
-    public Button btn_Setting;
+    [SerializeField] Button btn_Start;
+    [SerializeField] Button btn_Recipe;
+    [SerializeField] Button btn_Tutorial;
+    [SerializeField] Button btn_Setting;
+
+    [SerializeField] GameObject panel_recipe;
+    [SerializeField] GameObject panel_setting;
 
     void Start()
     {
         btn_Start.onClick.AddListener(MoveMainScene);
-        //btn_Recipe.onClick.AddListener( );
-        //btn_Setting.onClick.AddListener( );
+        btn_Recipe.onClick.AddListener(RecipePop);
+        btn_Tutorial.onClick.AddListener(Tutorial);
+        btn_Setting.onClick.AddListener(SettingPop);
     }
     private void MoveMainScene()
     {
         SceneManager.LoadScene("KHK_Scene");
+    }
+
+    private void RecipePop()
+    {
+        panel_recipe.SetActive(true);
+    }
+
+    private void Tutorial()
+    { }
+
+    private void SettingPop()
+    {
+        panel_setting.SetActive(true);
     }
 }
