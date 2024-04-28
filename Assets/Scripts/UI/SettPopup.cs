@@ -16,6 +16,8 @@ public class SettPopup : MonoBehaviour
     [SerializeField] Button btn_exit;
     [SerializeField] Button btn_muteBGM;
     [SerializeField] Button btn_muteSFX;
+    [SerializeField] Sprite soundYes;
+    [SerializeField] Sprite soundNo;
 
 
     void Start()
@@ -36,26 +38,28 @@ public class SettPopup : MonoBehaviour
     {
         if (lockBGM)
         {
+            btn_muteBGM.GetComponent<Image>().sprite = soundYes;
             lockBGM = false;
-            //change img of button
         }
         else
         {
+            slider_BGM.value = 0f;
+            btn_muteBGM.GetComponent<Image>().sprite = soundNo;
             lockBGM = true;
-            //
         }
     }
     private void mutesfx()
     {
         if (lockSFX)
         {
+            btn_muteSFX.GetComponent<Image>().sprite = soundYes;
             lockSFX = false;
-            //change img of button
         }
         else
         {
+            slider_BGM.value = 0f;
+            btn_muteSFX.GetComponent<Image>().sprite = soundNo;
             lockSFX = true;
-            //
         }
     }
 
@@ -65,6 +69,12 @@ public class SettPopup : MonoBehaviour
         {
             slider_BGM.value = 0f;
         }
+        else
+        {
+            float volume = value * 10;
+            int roundedVolume = Mathf.RoundToInt(volume);
+            //SoundManager.Instance.SetVolume(roundedVolume);
+        }
 
     }
     private void SFXslider_Changed(float value)
@@ -72,6 +82,12 @@ public class SettPopup : MonoBehaviour
         if (lockSFX)
         {
             slider_SFX.value = 0f;
+        }
+        else
+        {
+            float volume = value * 10;
+            int roundedVolume = Mathf.RoundToInt(volume);
+            //SoundManager.Instance.SetVolume(roundedVolume);
         }
 
     }
