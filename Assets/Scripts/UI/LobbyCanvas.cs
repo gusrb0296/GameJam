@@ -25,6 +25,7 @@ public class LobbyCanvas : MonoBehaviour
     }
     private void MoveMainScene()
     {
+        SoundManager.Instance.PlayBGM(0);
         SceneManager.LoadScene("KHK_Scene");
     }
 
