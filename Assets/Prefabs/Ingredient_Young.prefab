@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 1000
   floatTextPrefab: {fileID: 3091452154687580042, guid: 911145aa17980f6429fe90b7dc999347, type: 3}
+  pivotIndex: 0
+  indigrentNum: 3
 --- !u!60 &4223792410896646649
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class BlockCollider : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         print($"충돌 감지 : {collision.gameObject.name}");
-        if(collision.transform.CompareTag("Cheese"))
+        if(collision.transform.CompareTag("Point"))
         {
             GameObject go = Instantiate(alertText);
             go.transform.position = transform.position;

@@ -14,6 +14,10 @@ public class GameCanvas : MonoBehaviour
 
     [SerializeField] GameObject gameOverPivot;
 
+    [SerializeField] Image[] ingredients;
+
+    Color colored = new Color(1, 1, 1, 1);
+
     bool isPause;
 
     private int currentGold;
@@ -23,6 +27,8 @@ public class GameCanvas : MonoBehaviour
         isPause = false;
         btn_Pause.onClick.AddListener(PuaseToggle);
         panel_Dim.onClick.AddListener(PuaseToggle);
+
+        GameManager.Instance.GetTypesIngredient.AddListener(SetIngredientColored);
 
         currentGold = 0;
     }
@@ -78,5 +84,10 @@ public class GameCanvas : MonoBehaviour
         Time.timeScale = 0;
 
         gameOverPivot.SetActive(true);
+    }
+
+    private void SetIngredientColored(int index)
+    {
+        ingredients[index].color = colored;
     }
 }

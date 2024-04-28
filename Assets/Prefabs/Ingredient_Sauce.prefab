@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 0bfef39a6d40d2a4b9ca5e13f96ed9f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 4000
   floatTextPrefab: {fileID: 3091452154687580042, guid: 911145aa17980f6429fe90b7dc999347, type: 3}
+  pivotIndex: 0
+  indigrentNum: 4
 --- !u!61 &6189300321193232205
 BoxCollider2D:
   m_ObjectHideFlags: 0

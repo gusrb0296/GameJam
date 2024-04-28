@@ -14,6 +14,8 @@ public class Stickable : MonoBehaviour
 
     public int pivotIndex;
 
+    [SerializeField] int indigrentNum;
+
         
     private void Start()
     {
@@ -25,6 +27,8 @@ public class Stickable : MonoBehaviour
         if (other.CompareTag("Cheese"))
         {
             gameObject.transform.parent = other.transform;
+
+            GameManager.Instance.GetTypesIngredient.Invoke(indigrentNum);
 
             gameCanvas.GetComponent<GameCanvas>().SetGold(gold);
 

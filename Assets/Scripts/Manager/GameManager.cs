@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent TriggerOff;
 
+    public UnityEvent<int> GetTypesIngredient;
+
     private static GameManager instance;
     public static GameManager Instance
     {

@@ -4,10 +4,9 @@ public class shootCheese : MonoBehaviour
 {
     public float maxForce;
     public float maxSpeed;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Vector2 initialMousePos;
 
-    bool isPressed = false;
 
     void Start()
     {
