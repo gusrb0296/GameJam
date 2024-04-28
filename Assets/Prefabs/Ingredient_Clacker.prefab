@@ -16,10 +16,18 @@ PrefabInstance:
       propertyPath: gold
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 6681955463792037811, guid: 84c9d4c2e655afa4ab0978c632906a26, type: 3}
+      propertyPath: indigrentNum
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7579505253460919638, guid: 84c9d4c2e655afa4ab0978c632906a26, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8b9b7d91e268cf94da97e866c369e1d4, type: 3}
+    - target: {fileID: 7579505253460919638, guid: 84c9d4c2e655afa4ab0978c632906a26, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7908498232506643104, guid: 84c9d4c2e655afa4ab0978c632906a26, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.41

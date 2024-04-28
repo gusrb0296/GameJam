@@ -6,13 +6,8 @@ public class IngredientSpawner : MonoBehaviour
 {
     SpawnManager spawnManager;
 
-    bool isSpawn = false;
-
-    private bool IngredientCheckBox;
-
     public GameObject rangeObject;
 
-    float coolTime = 15;
 
     private void Awake()
     {

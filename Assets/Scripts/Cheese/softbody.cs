@@ -7,6 +7,12 @@ public class softbody : MonoBehaviour
 {
     #region Constants
     private const float splineOffset = 0.5f;
+
+    private float moveDuration = 0.5f;
+
+    private bool isfinish;
+
+    public bool IsFinish => isfinish;
     #endregion
 
     #region Fields
@@ -14,6 +20,8 @@ public class softbody : MonoBehaviour
     public SpriteShapeController spriteShape;
     [SerializeField]
     public Transform[] points;
+
+    [SerializeField] Transform dish;
     #endregion
 
     #region MonoBehaviour Callbacks
@@ -25,6 +33,10 @@ public class softbody : MonoBehaviour
     private void Update()
     {
         UpdateVertices();
+        if(isfinish)
+        {
+            MoveToDish();
+        }
     }
     #endregion
 
@@ -56,4 +68,36 @@ public class softbody : MonoBehaviour
         }
     }
     #endregion
+
+    public void CheckMoveToDish()
+    {
+        print("이동 시작");
+        isfinish = true;
+    }
+
+    private IEnumerator MoveOverSeconds(Vector3 end, float seconds)
+    {
+        float elapsedTime = 0;
+        Vector3 startingPos = transform.position;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        while (elapsedTime < seconds)
+        {
+            rb.velocity = Vector2.zero;
+            transform.position = Vector3.Lerp(startingPos, end, (elapsedTime / seconds));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = end;  // 이동 완료 후 정확히 목표 위치에 설정
+        print("이동 완료");
+    }
+
+    private void MoveToDish()
+    {
+        transform.position = Vector3.MoveTowards(gameObject.transform.position, dish.position, Time.deltaTime * 5);
+    }
+
+    public void SetFalse()
+    {
+        isfinish = false;
+    }
 }

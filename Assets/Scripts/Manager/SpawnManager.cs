@@ -29,7 +29,6 @@ public class SpawnManager : MonoBehaviour
 
         for (int i = 0; i < values.Length; i++)
         {
-            print($"i : {i}");
             SpawnIngredient(i, i);
         }
     } 
@@ -63,7 +62,6 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnIngredient(int index, int pivotIndex)
     {
-        print($"pivotIndex = {pivotIndex}");
         GameObject go = Instantiate(Ingredients[values[index]], Return_RandomPosition(pivotIndex), Quaternion.identity);
         go.GetComponentInChildren<Stickable>().pivotIndex = pivotIndex;
     }

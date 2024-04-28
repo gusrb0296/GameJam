@@ -8,6 +8,8 @@ TagManager:
   - GameCanvas
   - Crab
   - Ingredient
+  - Skin
+  - Point
   layers:
   - Default
   - TransparentFX
