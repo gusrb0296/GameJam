@@ -12,6 +12,7 @@ public class LobbyCanvas : MonoBehaviour
     [SerializeField] Button btn_Setting;
 
     [SerializeField] GameObject panel_recipe;
+    [SerializeField] GameObject panel_tutorial;
     [SerializeField] GameObject panel_setting;
 
     void Start()
@@ -32,7 +33,9 @@ public class LobbyCanvas : MonoBehaviour
     }
 
     private void Tutorial()
-    { }
+    {
+        panel_tutorial.SetActive(true);
+    }
 
     private void SettingPop()
     {

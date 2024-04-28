@@ -876,7 +876,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-  m_SpriteShape: {fileID: 11400000, guid: f24cddf7c09a6442abbce710a6fd7397, type: 2}
+  m_SpriteShape: {fileID: 11400000, guid: 28885e7aa951a2d46bf3a451050bfba4, type: 2}
   m_FillPixelPerUnit: 256
   m_StretchTiling: 1
   m_SplineDetail: 16
@@ -1573,6 +1573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCanvas: {fileID: 0}
+  HPs: []
 --- !u!1 &7729316410709281179
 GameObject:
   m_ObjectHideFlags: 0
