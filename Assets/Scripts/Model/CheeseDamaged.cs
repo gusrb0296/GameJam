@@ -22,8 +22,6 @@ public class CheeseDamaged : MonoBehaviour
     private void Start()
     {
         thisCollider2D = GetComponent<Collider2D>();
-
-        print($"치즈의 콜라이더의 태그 : {thisCollider2D.tag}");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
