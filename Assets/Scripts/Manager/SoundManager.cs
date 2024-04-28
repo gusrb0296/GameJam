@@ -31,16 +31,16 @@ public class SoundManager : DontDestroy<SoundManager>
     AudioClip[] m_sfxClip;
     AudioSource[] m_audio = new AudioSource[(int)AUDIO_TYPE.MAX];
 
-    public void PlayBGM(BGM_CLIP bgm)
+    public void PlayBGM(int bgm)
     {
-        m_audio[(int)AUDIO_TYPE.BGM].clip = m_bgmClip[(int)bgm];
+        m_audio[(int)AUDIO_TYPE.BGM].clip = m_bgmClip[bgm];
         m_audio[(int)AUDIO_TYPE.BGM].Play();
     }
 
-    public void PlaySFX(SFX_CLIP sfx)
+    public void PlaySFX(int sfx)
     {
-        m_audio[(int)AUDIO_TYPE.SFX].clip = m_sfxClip[(int)sfx];
-        m_audio[(int)AUDIO_TYPE.SFX].PlayOneShot(m_sfxClip[(int)sfx]); //오디오 소스는 1개인데 거기서 사운드가 바뀌면 소리가 끊겨서 PlayOneShot을 통해 소리가안끊기게함
+        m_audio[(int)AUDIO_TYPE.SFX].clip = m_sfxClip[sfx];
+        m_audio[(int)AUDIO_TYPE.SFX].PlayOneShot(m_sfxClip[sfx]); //오디오 소스는 1개인데 거기서 사운드가 바뀌면 소리가 끊겨서 PlayOneShot을 통해 소리가안끊기게함
     }
 
     public void SetVolume(float level)

@@ -21,6 +21,7 @@ public class LobbyCanvas : MonoBehaviour
         btn_Recipe.onClick.AddListener(RecipePop);
         btn_Tutorial.onClick.AddListener(Tutorial);
         btn_Setting.onClick.AddListener(SettingPop);
+        SoundManager.Instance.PlayBGM(2);
     }
     private void MoveMainScene()
     {
@@ -29,17 +30,19 @@ public class LobbyCanvas : MonoBehaviour
 
     private void RecipePop()
     {
-        SoundManager.PlaySFX(SoundManager.SFX_CLIP.SFX_Clear_01);
+        SoundManager.Instance.PlaySFX(3);
         panel_recipe.SetActive(true);
     }
 
     private void Tutorial()
     {
+        SoundManager.Instance.PlaySFX(3);
         panel_tutorial.SetActive(true);
     }
 
     private void SettingPop()
     {
+        SoundManager.Instance.PlaySFX(3);
         panel_setting.SetActive(true);
     }
 }
