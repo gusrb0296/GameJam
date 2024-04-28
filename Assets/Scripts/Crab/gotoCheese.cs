@@ -9,6 +9,8 @@ public class gotoCheese : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
+    bool isgotoCheese = true;
+
     private void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
@@ -24,11 +26,21 @@ public class gotoCheese : MonoBehaviour
     {
         Vector3 cheesePosition = cheese.transform.position;
         Vector3 direction = cheesePosition - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        angle -= 90f;
-        rb.rotation = angle;
-        direction.Normalize();
-        movement = direction;
+
+        if(direction.magnitude <= 0.25f)
+        {
+            isgotoCheese = false;
+            print("¸ØÃã");
+        }
+
+        if(isgotoCheese)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            angle -= 90f;
+            rb.rotation = angle;
+            direction.Normalize();
+            movement = direction;
+        }
 
     }
 
