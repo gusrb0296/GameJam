@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameCanvas : MonoBehaviour
@@ -16,6 +17,13 @@ public class GameCanvas : MonoBehaviour
 
     [SerializeField] Image[] ingredients;
 
+    [SerializeField] Button btn_Lobby;
+
+    [SerializeField] Button btn_Recipe;
+
+    [SerializeField] Button btn_Back;
+
+
     Color colored = new Color(1, 1, 1, 1);
 
     bool isPause;
@@ -25,8 +33,11 @@ public class GameCanvas : MonoBehaviour
     private void Start()
     {
         isPause = false;
-        btn_Pause.onClick.AddListener(PuaseToggle);
-        panel_Dim.onClick.AddListener(PuaseToggle);
+        btn_Pause.onClick.AddListener(PauseToggle);
+        panel_Dim.onClick.AddListener(PauseToggle);
+        btn_Back.onClick.AddListener(PauseToggle);
+        btn_Lobby.onClick.AddListener(MoveToLobby);
+        btn_Recipe.onClick.AddListener(OpenRecipePanel);
 
         GameManager.Instance.GetTypesIngredient.AddListener(SetIngredientColored);
 
@@ -38,12 +49,12 @@ public class GameCanvas : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            PuaseToggle();
+            PauseToggle();
             return;
         }
     }
 
-    private void PuaseToggle()
+    private void PauseToggle()
     {
         if (isPause)
         {
@@ -89,5 +100,16 @@ public class GameCanvas : MonoBehaviour
     private void SetIngredientColored(int index)
     {
         ingredients[index].color = colored;
+    }
+
+    private void MoveToLobby()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("LobbyScene");
+    }
+
+    private void OpenRecipePanel()
+    {
+
     }
 }
