@@ -10,7 +10,8 @@ public class RecipePopup : MonoBehaviour
     [SerializeField] Button btn_exit;
     [SerializeField] Button btn_prev;
     [SerializeField] Button btn_next;
-    [SerializeField] bool locked; // test variable
+
+    [SerializeField] bool locked;
     [SerializeField] GameObject[] lockedRecipe;
     [SerializeField] GameObject[] unlockedRecipe;
     private GameObject currentRecipeObject;

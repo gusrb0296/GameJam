@@ -18,7 +18,8 @@ public class SettPopup : MonoBehaviour
     [SerializeField] Button btn_muteSFX;
     [SerializeField] Sprite soundYes;
     [SerializeField] Sprite soundNo;
-
+    private float rememberB;
+    private float rememberS;
 
     void Start()
     {
@@ -38,12 +39,14 @@ public class SettPopup : MonoBehaviour
     {
         if (lockBGM)
         {
+            SoundManager.Instance.SetVolumeBGM(rememberB);
             btn_muteBGM.GetComponent<Image>().sprite = soundYes;
             lockBGM = false;
         }
         else
         {
-            slider_BGM.value = 0f;
+            rememberB = slider_BGM.value;
+            SoundManager.Instance.SetMuteBGM();
             btn_muteBGM.GetComponent<Image>().sprite = soundNo;
             lockBGM = true;
         }
@@ -52,12 +55,14 @@ public class SettPopup : MonoBehaviour
     {
         if (lockSFX)
         {
+            SoundManager.Instance.SetVolumeSFX(rememberS);
             btn_muteSFX.GetComponent<Image>().sprite = soundYes;
             lockSFX = false;
         }
         else
         {
-            slider_BGM.value = 0f;
+            rememberS = slider_SFX.value;
+            SoundManager.Instance.SetMuteSFX();
             btn_muteSFX.GetComponent<Image>().sprite = soundNo;
             lockSFX = true;
         }
@@ -67,13 +72,11 @@ public class SettPopup : MonoBehaviour
     {
         if (lockBGM)
         {
-            slider_BGM.value = 0f;
+            slider_BGM.value = rememberB;
         }
         else
         {
-            float volume = value * 10;
-            int roundedVolume = Mathf.RoundToInt(volume);
-            //SoundManager.Instance.SetVolume(roundedVolume);
+            SoundManager.Instance.SetVolumeBGM(value);
         }
 
     }
@@ -81,13 +84,11 @@ public class SettPopup : MonoBehaviour
     {
         if (lockSFX)
         {
-            slider_SFX.value = 0f;
+            slider_SFX.value = rememberS;
         }
         else
         {
-            float volume = value * 10;
-            int roundedVolume = Mathf.RoundToInt(volume);
-            //SoundManager.Instance.SetVolume(roundedVolume);
+            SoundManager.Instance.SetVolumeSFX(value);
         }
 
     }

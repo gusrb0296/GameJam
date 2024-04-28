@@ -29,6 +29,7 @@ public class LobbyCanvas : MonoBehaviour
 
     private void RecipePop()
     {
+        SoundManager.PlaySFX(SoundManager.SFX_CLIP.SFX_Clear_01);
         panel_recipe.SetActive(true);
     }
 

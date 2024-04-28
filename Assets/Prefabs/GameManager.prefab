@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3482964773776371992}
   - component: {fileID: 7943461792366772423}
+  - component: {fileID: 4314613779886423187}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,6 +49,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 8238992161759650701}
   sceneManager: {fileID: 0}
+  GetIngredient:
+    m_PersistentCalls:
+      m_Calls: []
+  TriggerOff:
+    m_PersistentCalls:
+      m_Calls: []
+  GetTypesIngredient:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4314613779886423187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036750292454202274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7e9d996cefe36449147142b220063f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_bgmClip:
+  - {fileID: 8300000, guid: cb4c6e3cc03683e4f846dd87e96a391d, type: 3}
+  - {fileID: 8300000, guid: 66600e69fda512e4e84334b8e94c1517, type: 3}
+  - {fileID: 8300000, guid: 42c5fcfc1731c8041a0253a40981fd0a, type: 3}
+  m_sfxClip:
+  - {fileID: 8300000, guid: 2f565683517bffb45a59d35f2965fba8, type: 3}
+  - {fileID: 8300000, guid: 7260bffba75978248b3b58ea64629383, type: 3}
+  - {fileID: 8300000, guid: 5a6a4f7ea07792b4cbb077c6396ff9c6, type: 3}
+  - {fileID: 8300000, guid: 6f6e5e65bd1bea640b83922eb9f9cf91, type: 3}
+  - {fileID: 8300000, guid: 82253675f25a5d548ac26f50192d5d1f, type: 3}
+  - {fileID: 8300000, guid: 4b244cc08b4f5564b9677447a2806474, type: 3}
+  - {fileID: 8300000, guid: cb576e7044ac1d14aa89e2bc7c72d9db, type: 3}
 --- !u!1 &6543372964044745414
 GameObject:
   m_ObjectHideFlags: 0

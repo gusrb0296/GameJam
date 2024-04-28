@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundManager : DontDestroy<SoundManager> {
+public class SoundManager : DontDestroy<SoundManager>
+{
 
     public enum AUDIO_TYPE
     {
@@ -42,29 +43,31 @@ public class SoundManager : DontDestroy<SoundManager> {
         m_audio[(int)AUDIO_TYPE.SFX].PlayOneShot(m_sfxClip[(int)sfx]); //오디오 소스는 1개인데 거기서 사운드가 바뀌면 소리가 끊겨서 PlayOneShot을 통해 소리가안끊기게함
     }
 
-    public void SetVolume(int level)
+    public void SetVolume(float level)
     {
-        for(int i = 0; i<m_audio.Length; i++)
+        for (int i = 0; i < m_audio.Length; i++)
         {
             m_audio[i].volume = level;
         }
     }
 
-    public void SetVolumeBGM(int level)
+    public void SetVolumeBGM(float level)
     {
         m_audio[(int)AUDIO_TYPE.BGM].volume = level;
     }
-    public void SetVolumeSFX(int level)
+    public void SetVolumeSFX(float level)
     {
         m_audio[(int)AUDIO_TYPE.SFX].volume = level;
     }
-    public void SetMute(bool isOn)
+    public void SetMuteBGM()
     {
-        for (int i = 0; i < m_audio.Length; i++)
-        {
-            m_audio[i].mute = isOn;
-        }
+        m_audio[(int)AUDIO_TYPE.BGM].volume = 0;
     }
+    public void SetMuteSFX()
+    {
+        m_audio[(int)AUDIO_TYPE.SFX].volume = 0;
+    }
+
     public void StopBGM()
     {
         m_audio[(int)AUDIO_TYPE.BGM].Stop();
@@ -76,7 +79,7 @@ public class SoundManager : DontDestroy<SoundManager> {
 
     public void PauseBGM()
     {
-        m_audio[(int)AUDIO_TYPE.BGM].Pause();        
+        m_audio[(int)AUDIO_TYPE.BGM].Pause();
     }
 
     public void ResumeBGM()
@@ -88,6 +91,7 @@ public class SoundManager : DontDestroy<SoundManager> {
     {
         m_audio[(int)AUDIO_TYPE.SFX].Pause();
     }
+
     // Use this for initialization
     protected override void OnStart()
     {
@@ -100,12 +104,4 @@ public class SoundManager : DontDestroy<SoundManager> {
         m_audio[(int)AUDIO_TYPE.SFX].playOnAwake = false;
         m_audio[(int)AUDIO_TYPE.SFX].loop = false;
     }
-
-    // Update is called once per frame
-    void Update () {
-		if(Input.GetKeyDown(KeyCode.Space))
-        {
-            PlaySFX((SFX_CLIP)Random.Range(0, 5));
-        }
-	}
 }
