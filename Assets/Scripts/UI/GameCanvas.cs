@@ -23,6 +23,10 @@ public class GameCanvas : MonoBehaviour
 
     [SerializeField] Button btn_Back;
 
+    [SerializeField] Button btn_replay;
+
+    [SerializeField] Button btn_BackToLobby;
+
 
     Color colored = new Color(1, 1, 1, 1);
 
@@ -38,6 +42,9 @@ public class GameCanvas : MonoBehaviour
         btn_Back.onClick.AddListener(PauseToggle);
         btn_Lobby.onClick.AddListener(MoveToLobby);
         btn_Recipe.onClick.AddListener(OpenRecipePanel);
+
+        btn_BackToLobby.onClick.AddListener(Lobbybtn);
+        btn_replay.onClick.AddListener(Replaybtn);
 
         GameManager.Instance.GetTypesIngredient.AddListener(SetIngredientColored);
 
@@ -111,5 +118,15 @@ public class GameCanvas : MonoBehaviour
     private void OpenRecipePanel()
     {
 
+    }
+
+    private void Replaybtn()
+    {
+        SceneManager.LoadScene("KHK_Scene");
+    }
+
+    private void Lobbybtn()
+    {
+        SceneManager.LoadScene("Lobby_Scene");
     }
 }
