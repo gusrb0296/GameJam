@@ -19,6 +19,10 @@ public class RecipePopup : MonoBehaviour
         btn_exit.onClick.AddListener(exitRecipe);
         btn_prev.onClick.AddListener(prevRecipe);
         btn_next.onClick.AddListener(nextRecipe);
+    }
+
+    void OnEnable()
+    {
         page = 0;
         showDish(page, locked);
     }
