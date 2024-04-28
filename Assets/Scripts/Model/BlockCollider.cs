@@ -22,12 +22,20 @@ public class BlockCollider : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print($"Ãæµ¹ °¨Áö : {collision.gameObject.name}");
-        if(collision.transform.CompareTag("Cheese"))
+        print($"ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ : {collision.gameObject.name}");
+        if (collision.transform.CompareTag("Cheese"))
         {
             GameObject go = Instantiate(alertText);
             go.transform.position = transform.position;
             go.GetComponent<FloatingAlert>().Initialize();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D trigger) // if 30000 is filled
+    {
+        if (trigger.transform.CompareTag("Cheese"))
+        {
+            Debug.Log("ending");
         }
     }
 
