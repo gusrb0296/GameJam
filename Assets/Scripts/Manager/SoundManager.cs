@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundManager : DontDestroy<SoundManager>
 {
+    
 
     public enum AUDIO_TYPE
     {

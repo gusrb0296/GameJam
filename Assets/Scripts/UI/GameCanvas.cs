@@ -19,7 +19,7 @@ public class GameCanvas : MonoBehaviour
 
     [SerializeField] Button btn_Lobby;
 
-    [SerializeField] Button btn_Recipe;
+    [SerializeField] Button btn_Replay;
 
     [SerializeField] Button btn_Back;
 
@@ -41,7 +41,7 @@ public class GameCanvas : MonoBehaviour
         panel_Dim.onClick.AddListener(PauseToggle);
         btn_Back.onClick.AddListener(PauseToggle);
         btn_Lobby.onClick.AddListener(MoveToLobby);
-        btn_Recipe.onClick.AddListener(OpenRecipePanel);
+        btn_Replay.onClick.AddListener(OpenRecipePanel);
 
         btn_BackToLobby.onClick.AddListener(Lobbybtn);
         btn_replay.onClick.AddListener(Replaybtn);
@@ -117,7 +117,8 @@ public class GameCanvas : MonoBehaviour
 
     private void OpenRecipePanel()
     {
-
+        Time.timeScale = 1;
+        SceneManager.LoadScene("KHK_Scene");
     }
 
     private void Replaybtn()

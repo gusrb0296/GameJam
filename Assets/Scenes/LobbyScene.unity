@@ -225,6 +225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scrolling
       objectReference: {fileID: 0}
+    - target: {fileID: 2563862145482054101, guid: ec1c36f84ed4aef43aa1203fdb5425c4, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5250751829976913002, guid: ec1c36f84ed4aef43aa1203fdb5425c4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -330,6 +334,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1333702683993880031, guid: 9aa0ee8fef9033544a2c1f966cd204e1, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3482964773776371992, guid: 9aa0ee8fef9033544a2c1f966cd204e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -369,6 +377,10 @@ PrefabInstance:
     - target: {fileID: 3482964773776371992, guid: 9aa0ee8fef9033544a2c1f966cd204e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314613779886423187, guid: 9aa0ee8fef9033544a2c1f966cd204e1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5036750292454202274, guid: 9aa0ee8fef9033544a2c1f966cd204e1, type: 3}
       propertyPath: m_Name
@@ -481,6 +493,7 @@ GameObject:
   - component: {fileID: 856350636}
   - component: {fileID: 856350635}
   - component: {fileID: 856350634}
+  - component: {fileID: 856350637}
   m_Layer: 5
   m_Name: settBtn
   m_TagString: Untagged
@@ -589,6 +602,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856350632}
   m_CullTransparentMesh: 1
+--- !u!114 &856350637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856350632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe72c07ffff049418f6df591f513e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 856350634}
+  SettingPanel: {fileID: 1499017072}
 --- !u!1 &878356562
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +1004,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1.87
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1754,6 +1781,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5359651194480707610, guid: 965dcd1e6079de948abdb013211a1137, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6221820536216792882, guid: 965dcd1e6079de948abdb013211a1137, type: 3}
       propertyPath: m_Name
       value: SettPopup
@@ -1772,6 +1803,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6791497368974497324, guid: 965dcd1e6079de948abdb013211a1137, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8296790305507383935, guid: 965dcd1e6079de948abdb013211a1137, type: 3}
+      propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8366579317752902133, guid: 965dcd1e6079de948abdb013211a1137, type: 3}
@@ -1804,6 +1839,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1125542349}
-  - {fileID: 700255033}
   - {fileID: 1195831969}
   - {fileID: 1812782028}
+  - {fileID: 700255033}

@@ -21,11 +21,13 @@ public class LobbyCanvas : MonoBehaviour
         btn_Recipe.onClick.AddListener(RecipePop);
         btn_Tutorial.onClick.AddListener(Tutorial);
         btn_Setting.onClick.AddListener(SettingPop);
-        SoundManager.Instance.PlayBGM(2);
+        SoundManager.Instance.PlayBGM(1);
     }
+
+
     private void MoveMainScene()
     {
-        SoundManager.Instance.PlayBGM(0);
+        SoundManager.Instance.PlayBGM(2);
         SceneManager.LoadScene("KHK_Scene");
     }
 
