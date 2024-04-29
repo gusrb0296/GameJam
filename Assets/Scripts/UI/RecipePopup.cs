@@ -18,37 +18,53 @@ public class RecipePopup : MonoBehaviour
     void Start()
     {
         btn_exit.onClick.AddListener(exitRecipe);
-        btn_prev.onClick.AddListener(prevRecipe);
-        btn_next.onClick.AddListener(nextRecipe);
+        btn_prev.onClick.AddListener(prevSlide);
+        btn_next.onClick.AddListener(nextSlide);
     }
 
     void OnEnable()
     {
         page = 0;
         showDish(page, locked);
+
+        btn_next.gameObject.SetActive(true);
+        btn_prev.gameObject.SetActive(false);
     }
 
     private void exitRecipe()
     {
         gameObject.SetActive(false);
     }
-    private void prevRecipe()
+  
+    private void prevSlide()
     {
+        page--;
+        if (!btn_next.gameObject.activeSelf)
+        {
+            btn_next.gameObject.SetActive(true);
+        }
         if (page <= 0)
         {
-            page = maxRecipe - 1;
-        }
-        else
-        {
-            page--;
+            btn_prev.gameObject.SetActive(false);
         }
         showDish(page, locked);
     }
-    private void nextRecipe()
+
+    private void nextSlide()
     {
-        page = (page + 1) % maxRecipe;
+        page++;
+        if (!btn_prev.gameObject.activeSelf)
+        {
+            btn_prev.gameObject.SetActive(true);
+        }
+        if (page >= maxRecipe)
+        {
+            btn_next.gameObject.SetActive(false);
+        }
         showDish(page, locked);
     }
+
+
 
     private void showDish(int page, bool locked)
     {

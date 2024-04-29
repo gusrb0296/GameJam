@@ -25,6 +25,7 @@ public class TutorialPopup : MonoBehaviour
     {
         page = 1;
         showPage(page);
+        btn_next.gameObject.SetActive(true);
         btn_prev.gameObject.SetActive(false);
     }
 

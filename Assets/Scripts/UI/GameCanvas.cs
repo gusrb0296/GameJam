@@ -127,6 +127,6 @@ public class GameCanvas : MonoBehaviour
 
     private void Lobbybtn()
     {
-        SceneManager.LoadScene("Lobby_Scene");
+        SceneManager.LoadScene("LobbyScene");
     }
 }

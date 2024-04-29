@@ -26,6 +26,8 @@ public class CheeseDamaged : MonoBehaviour
     [SerializeField] GameObject one;
     [SerializeField] GameObject two;
 
+    [SerializeField] GameObject[] foods;
+
     Collider2D thisCollider2D;
 
     bool isEnter=false;
@@ -97,10 +99,11 @@ public class CheeseDamaged : MonoBehaviour
         {
             print("레시피(1) 토마토 파스타 완성");
             int isPasterDone = PlayerPrefs.GetInt("Paster", 0);
+
+            HappyCrab();
             if (isPasterDone == 0)
             {
                 Recipe(0);
-                HappyCrab();
             }
             PlayerPrefs.SetInt("Paster", 1);
         }
@@ -108,10 +111,10 @@ public class CheeseDamaged : MonoBehaviour
         {
             print("레시피(2) 토마토 샐러드 완성");
             int isSaladaDone = PlayerPrefs.GetInt("Salada", 0);
+            HappyCrab();
             if (isSaladaDone == 0)
             {
                 Recipe(1);
-                HappyCrab();
             }
             PlayerPrefs.SetInt("Salada", 1);
 
@@ -121,21 +124,23 @@ public class CheeseDamaged : MonoBehaviour
             print("레시피(3) 사과 토스트 완성");
 
             int isToastDone = PlayerPrefs.GetInt("Toast", 0);
+            HappyCrab();
+
             if (isToastDone == 0)
             {
                 Recipe(2);
-                HappyCrab();
             }
             PlayerPrefs.SetInt("Toast", 1);
         }
         else if (checkbox[3] && checkbox[6] && checkbox[7] && count == 3)
         {
             print("레시피(2) 사고 카나페 완성");
-            int isCanapeDone = PlayerPrefs.GetInt("Toast", 0);
+            int isCanapeDone = PlayerPrefs.GetInt("Canape", 0);
+            HappyCrab();
+
             if (isCanapeDone == 0)
             {
                 Recipe(3);
-                HappyCrab();
             }
             PlayerPrefs.SetInt("Canape", 1);
         }
@@ -158,7 +163,8 @@ public class CheeseDamaged : MonoBehaviour
 
     private void Recipe(int index)
     {
-        GameObject go = Instantiate(unlockedRecipes[index], new Vector3(965, 525, 0), Quaternion.identity);
+        GameObject go = Instantiate(foods[index]);
         go.transform.parent = gameCanvas.transform;
+        go.transform.localPosition = new Vector2(0, 0);
     }
 }

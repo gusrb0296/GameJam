@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6681955463792037811, guid: 84c9d4c2e655afa4ab0978c632906a26, type: 3}
       propertyPath: gold
-      value: 500
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 6681955463792037811, guid: 84c9d4c2e655afa4ab0978c632906a26, type: 3}
       propertyPath: indigrentNum

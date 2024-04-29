@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ebe17c2e73e9f49924c22bb4427fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 1500
+  gold: 5000
   floatTextPrefab: {fileID: 3091452154687580042, guid: 911145aa17980f6429fe90b7dc999347, type: 3}
   pivotIndex: 0
   indigrentNum: 6
