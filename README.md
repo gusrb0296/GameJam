@@ -22,9 +22,7 @@
 
 <img src="https://github.com/gusrb0296/GameJam/assets/21351278/5e125654-f5ec-488f-9199-e687b2293b08" width="49%"/> <img src="https://github.com/gusrb0296/GameJam/assets/21351278/0c6a5a0d-3017-4e98-b68c-6d8b5a812ad7" width="49%"/>
 
-<img src="https://github.com/gusrb0296/GameJam/assets/21351278/588096a3-13ca-4551-bda9-ad693e4933af" width="49%"/> <img src="https://github.com/gusrb0296/GameJam/assets/21351278/e9a7974f-55a5-4bda-894c-e884453f70e8" width="49%"/> 
-
-<img src="https://github.com/gusrb0296/GameJam/assets/21351278/f13602ff-135f-45b8-997e-d4368139ad23" width="49%"/> <img src="https://github.com/gusrb0296/GameJam/assets/21351278/531b434c-92db-4376-a758-f20d433f05d5" width="49%"/> 
+<img src="https://github.com/gusrb0296/GameJam/assets/21351278/588096a3-13ca-4551-bda9-ad693e4933af" width="49%"/> <img src="https://github.com/gusrb0296/GameJam/assets/21351278/531b434c-92db-4376-a758-f20d433f05d5" width="49%"/> 
 
 <img src="https://github.com/gusrb0296/GameJam/assets/21351278/232ca72a-009f-4af5-9787-bf456c92e24b" width="49%"/> <img src="https://github.com/gusrb0296/GameJam/assets/21351278/156dde57-5e83-4e98-a2cb-c369c1b6560a" width="49%"/> 
 
